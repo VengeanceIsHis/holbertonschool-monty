@@ -1,7 +1,7 @@
 #include "monty.h"
 void (*get_op(char **input))(stack_t **stack, unsigned int line_number)
   {
-    instruction_s op[] = {
+    instruction_t op[] = {
 		    { "push", push_op },
 		    { "pall", pall_op }
     };
