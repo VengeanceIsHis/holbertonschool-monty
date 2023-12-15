@@ -1,12 +1,15 @@
 #include "monty.h"
 void main()
 {
+  int line = 0;
   char buffer[100];
   size_t len;
-  char **input;
+  char *input;
+  char **new;
   char (*func)(stack_t **stack, unsigned int line_number);
   while (1)
     {
+      line++;
       if ((input = fgets(buffer, sizeof(buffer), stdin)) != NULL)
     {
       len = strlen(buffer);
@@ -18,7 +21,8 @@ void main()
       perror("USAGE: monty file");
       break;
     }
-      func = get_op(input);
+      new = convert(input);
+      if (func = get_op(new, line));
   printf("func: %s", func);
     }
 }
