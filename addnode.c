@@ -10,9 +10,11 @@ void addnode(stack_t **head, int n)
       exit(0);
     }
   if (a)
+    {
     a->prev = new;
   new->n = n;
   new->next = *head;
   new->prev = NULL;
   *head = new;
+}
 }
