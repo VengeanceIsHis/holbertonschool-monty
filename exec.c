@@ -1,28 +1,28 @@
 #include "monty.h"
 int exec(char *content, stack_t **stack, unsigned int line_number, FILE *file)
 {
-  instruction_t op[] = {
+  instruction_t opst[] = {
 			{"push", push_op},
 			{"pall", pall_op}
   };
   unsigned int i = 0;
-  char *oper;
-  oper = strtok(content, " \n\t");
-  if (oper && oper[0] == '#')
+  char *op;
+  op = strtok(content, " \n\t");
+  if (op && op[0] == '#')
     return (0);
   bus.arg = strtok(NULL, " \n\t");
-  while (op[i].opcode && oper)
+  while (opst[i].opcode && op)
     {
-      if (strcmp(oper, op[i].opcode) == 0)
+      if (strcmp(op, opst[i].opcode) == 0)
 	{
-	  op[i].f(stack, line_number);
+	  opst[i].f(stack, line_number);
 	  return (0);
 	}
       i++;
     }
-  if (oper && op[i].opcode == NULL)
+  if (op && opst[i].opcode == NULL)
     {
-      fprintf(stderr, "L%d: unknown instruction %s\n", line_number, oper);
+      fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
       fclose(file);
       free(content);
       free_stack(*stack);
