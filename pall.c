@@ -1,10 +1,10 @@
 #include "monty.h"
 void pall_op(stack_t **stack, unsigned int line_number)
 {
-  stack_t **head;
+  stack_t **h;
   (void)line_number;
 
-  h = *head;
+  h = *stack;
   if (h == NULL)
     return;
   while (h)
