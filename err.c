@@ -42,7 +42,7 @@ void err(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_n();
 	exit(EXIT_FAILURE);
 }
 

@@ -32,7 +32,7 @@ void read_f(FILE *f)
 
 	for (line_number = 1; getline(&buffer, &len, f) != -1; line_number++)
 	{
-		format = parse_line(buffer, line_number, format);
+		format = parse_l(buffer, line_number, format);
 	}
 	free(buffer);
 }
@@ -66,7 +66,7 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	find_func(opcode, value, line_number, format);
+	find_f(opcode, value, line_number, format);
 	return (format);
 }
 
