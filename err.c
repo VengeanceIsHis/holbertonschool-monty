@@ -47,7 +47,7 @@ void err(int error_c, ...)
 }
 
 /**
- * more_err - handles errors.
+ * err2 - handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
