@@ -1,7 +1,7 @@
 #include "monty.h"
 void addnode(stack_t **stack, int n)
 {
-  stack_t *new, add;
+  stack_t *new, *add;
   add = *stack;
   new = malloc(sizeof(stack_t));
   if (new == NULL)
