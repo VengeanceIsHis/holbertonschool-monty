@@ -11,11 +11,11 @@ int exec(char *content, stack_t **stack, unsigned int line_number, FILE *file)
   if (oper && oper[0] == '#')
     return (0);
   bus.arg = strtok(NULL, " \n\t");
-  while (op[i].opcode && op)
+  while (op[i].opcode && oper)
     {
       if (strcmp(oper, op[i].opcode) == 0)
 	{
-	  op[i].f(stack, counter);
+	  op[i].f(stack, line_number);
 	  return (0);
 	}
       i++;
