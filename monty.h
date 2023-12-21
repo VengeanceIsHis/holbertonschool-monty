@@ -45,3 +45,4 @@ void push_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void addnode(stack_t **stack, int n);
 void free_stack(stack_t *stack);
+int exec(char *content, stack_t **stack, unsigned int line_number, FILE *file);
