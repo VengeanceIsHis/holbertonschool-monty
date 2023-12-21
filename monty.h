@@ -43,4 +43,5 @@ void q(stack_t **head, unsigned int line_number);
 void (*get_op(char **input))(stack_t **stack, unsigned int line_number);
 void push_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
-char **convert(char *str);
+void addnode(stack_t **stack, int n);
+void free_stack(stack_t *stack)
