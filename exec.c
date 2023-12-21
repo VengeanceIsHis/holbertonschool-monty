@@ -23,10 +23,10 @@ int exec(char *content, stack_t **stack, unsigned int line_number, FILE *file)
   if (oper && op[i].opcode == NULL)
     {
       fprintf(stderr, "L%d: unknown instruction %s\n", line_number, oper);
-      flose(file);
+      fclose(file);
       free(content);
       free_stack(*stack);
       exit(EXIT_FAILURE);
+    }
       return (1);
     }
-}
