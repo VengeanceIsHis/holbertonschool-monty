@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -40,19 +40,19 @@ typedef struct instruction_s
 } instruction_t;
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
-void open_file(char *file_name);
-int parse_line(char *buffer, int line_number, int format);
-void read_file(FILE *);
-int len_chars(FILE *);
-void find_func(char *, char *, int, int);
-stack_t *create_node(int n);
-void free_nodes(void);
-void print_stack(stack_t **, unsigned int);
-void add_to_stack(stack_t **, unsigned int);
-void add_to_queue(stack_t **, unsigned int);
-void call_fun(op_func, char *, char *, int, int);
-void print_top(stack_t **, unsigned int);
-void pop_top(stack_t **, unsigned int);
+void open_f(char *file_name);
+int parse_l(char *buffer, int line_number, int format);
+void read_f(FILE *);
+int len_c(FILE *);
+void find_f(char *, char *, int, int);
+stack_t *create_n(int n);
+void free_n(void);
+void print_s(stack_t **, unsigned int);
+void add_to_s(stack_t **, unsigned int);
+void add_to_q(stack_t **, unsigned int);
+void call_f(op_func, char *, char *, int, int);
+void print_t(stack_t **, unsigned int);
+void pop_t(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void swap_nodes(stack_t **, unsigned int);
 void add_nodes(stack_t **, unsigned int);
