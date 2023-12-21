@@ -18,8 +18,8 @@ void err(int error_c, ...)
 	char *op;
 	int line_number;
 
-	va_start(ag, error_code);
-	switch (error_code)
+	va_start(ag, error_c);
+	switch (error_c)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
