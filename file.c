@@ -78,7 +78,7 @@ int parse_l(char *buffer, int line_number, int format)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_f(char *opcode, char *value, int ln, int format)
+void find_f(char *opcode, char *value, int line_number, int format)
 {
 	int i;
 	int flag;
@@ -95,12 +95,12 @@ void find_f(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, ln, format);
+			call_f(func_list[i].f, opcode, value, line_number, format);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		err(3, line_number, opcode);
 }
 
 
