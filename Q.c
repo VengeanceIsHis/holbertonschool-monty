@@ -1,11 +1,4 @@
 #include "monty.h"
-void q(stack_t **head, unsigned int line_number)
-{
-  (void)head;
-  (void)line_number;
-  bus.lifi = 1;
-}
-
 void addqueue(stack_t **head, int n)
 {
   stack_t *new, *a;

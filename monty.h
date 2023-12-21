@@ -43,7 +43,6 @@ typedef struct bus_s
 } bus_t;
 extern bus_t bus;
 void addqueue(stack_t **head, int n);
-void q(stack_t **head, unsigned int line_number);
 void push_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void addnode(stack_t **stack, int n);
