@@ -8,10 +8,11 @@ int exec(char *content, stack_t **stack, unsigned int line_number, FILE *file)
   unsigned int i = 0;
   char *op;
   op = strtok(content, " \n\t");
-  if (op && op[0] == '#')
+  if (!op && op[0] == '#')
     return (0);
   bus.arg = strtok(NULL, " \n\t");
-  while (opst[i].opcode && op)
+  bus.lifi = 0;
+  while (opst[i].opcode)
     {
       if (strcmp(op, opst[i].opcode) == 0)
 	{
