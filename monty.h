@@ -30,7 +30,16 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+typedef struct bus_s
+{
+  char *arg;
+  FILE *file;
+  char *content;
+  int lifi;
+} bus_t;
+void addqueue(stack_t **head, int n);
+void q(stack_t **head, unsigned int line_number);
 void (*get_op(char **input))(stack_t **stack, unsigned int line_number);
-void push_op(stack_t **stack, unsigned int line_number, int n);
-void pall_op(stack_t **stack, unsigned int line_number, int n);
+void push_op(stack_t **stack, unsigned int line_number;
+void pall_op(stack_t **stack, unsigned int line_number;
 char **convert(char *str);
