@@ -83,7 +83,7 @@ void err2(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_n();
 	exit(EXIT_FAILURE);
 }
 

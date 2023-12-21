@@ -29,7 +29,6 @@ void read_f(FILE *f)
 	int line_number, format = 0;
 	char *buffer = NULL;
 	size_t len = 0;
-
 	for (line_number = 1; getline(&buffer, &len, f) != -1; line_number++)
 	{
 		format = parse_l(buffer, line_number, format);
@@ -39,7 +38,7 @@ void read_f(FILE *f)
 
 
 /**
- * parse_line - Separates each line into tokens to determine
+ * parse_l - Separates each line into tokens to determine
  * which function to call
  * @buffer: line from the file
  * @line_number: line number
@@ -48,7 +47,7 @@ void read_f(FILE *f)
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int parse_l(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
@@ -79,14 +78,14 @@ int parse_line(char *buffer, int line_number, int format)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void find_f(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
+		{"push", add_to_s},
+		{"pall", print_s},
 	};
 
 	if (opcode[0] == '#')
